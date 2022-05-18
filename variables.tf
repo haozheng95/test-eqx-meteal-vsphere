@@ -58,7 +58,7 @@ variable "private_subnets" {
       "nat" : true,
       "vsphere_service_type" : "management",
       "routable" : true,
-      "cidr" : "172.16.0.0/24",
+      "cidr" : "172.16.3.0/24",
       "reserved_ip_count" : 100
     },
     {
@@ -66,14 +66,14 @@ variable "private_subnets" {
       "nat" : false,
       "vsphere_service_type" : "vmotion",
       "routable" : false,
-      "cidr" : "172.16.1.0/24"
+      "cidr" : "172.16.4.0/24"
     },
     {
       "name" : "vSAN",
       "nat" : false,
       "vsphere_service_type" : "vsan",
       "routable" : false,
-      "cidr" : "172.16.2.0/24"
+      "cidr" : "172.16.5.0/24"
     }
   ]
 }
@@ -254,6 +254,18 @@ variable "relative_path_to_gcs_key" {
   description = "(Deprecated: use path_to_gcs_key) If you are using GCS to download your vCenter ISO this is the path to the GCS key"
   type        = string
   default     = ""
+}
+
+variable "private_key" {
+  description = "(Deprecated: use path_to_gcs_key) If you are using GCS to download your vCenter ISO this is the path to the GCS key"
+  type        = string
+  default     = "/Users/yhaozheng/.ssh/vmware-on-metal-key.new"
+}
+
+variable "router_ip" {
+  description = "(Deprecated: use path_to_gcs_key) If you are using GCS to download your vCenter ISO this is the path to the GCS key"
+  type        = string
+  default     = "139.178.88.107"
 }
 
 variable "vcenter_iso_name" {

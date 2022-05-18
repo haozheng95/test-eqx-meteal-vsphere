@@ -259,6 +259,7 @@ def main():  # noqa: C901
     uplink = online_pnics[0].device
     create_vswitch(host_network_system, vswitch_name, 1024, uplink, 9000)
     for subnet in subnets:
+        print(subnet)
         create_port_group(
             host_network_system, subnet["name"], vswitch_name, subnet["vlan"]
         )

@@ -1,7 +1,7 @@
-output "vpn_endpoint" {
-  value       = metal_device.router.access_public_ipv4
-  description = "L2TP VPN Endpoint"
-}
+#output "vpn_endpoint" {
+#  value       = metal_device.router.access_public_ipv4
+#  description = "L2TP VPN Endpoint"
+#}
 
 output "vpn_psk" {
   value       = random_password.ipsec_psk.result
@@ -47,10 +47,10 @@ output "ssh_key_path" {
   description = "The path of to the private SSH key created for this deployment"
 }
 
-output "bastion_host" {
-  value       = metal_device.router.access_public_ipv4
-  description = "The ip of the basetion host that can run commands against all of the local IPs"
-}
+#output "bastion_host" {
+#  value       = metal_device.router.access_public_ipv4
+#  description = "The ip of the basetion host that can run commands against all of the local IPs"
+#}
 
 output "vcenter_ip" {
   value       = lookup(data.external.get_vcenter_ip.result, "vcenter_ip")
